@@ -7,7 +7,8 @@ import Header from "./components/header/header"
 
 function App() {
     const [bookmarks,setBookmarks]=useState([]);
-    const [readingTime, setReadingTime] =useState(0);
+    const [readingTime, setReadingTime] =useState([]);
+   //  console.log(readingTime)
    //  
    
       const [activeBtns, setactiveBtns] = useState({})
@@ -39,9 +40,15 @@ function checkDuplicates(arr) {
    // 
 
      const handleMArkAsRaed = (reading_time,id)=>{
+           
+            // setReadingTime( readingTime+reading_time);
+            const newBookmarks1 = [...readingTime, reading_time]
      
-            setReadingTime( readingTime+reading_time);
-      
+            if(checkDuplicates(newBookmarks1)){
+              return;
+            }else{
+               setReadingTime(newBookmarks1);
+            }
             
           
          const remainingBookmarks =   bookmarks.filter(item => item.id !== id);
