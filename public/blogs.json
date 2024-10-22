@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "cover_image": "https://i.ibb.co.com/Srsk2Lv/istockphoto-1334591614-1024x1024.jpg",
+      "author": "Jane Doe",
+      "author_image": "https://i.ibb.co.com/Qp7pQ3x/amin-moshrefi-nh7o9sw5-Aqk-unsplash.jpg",
+      "post_date": "October 20, 2023",
+      "title": "The Dawn of AI",
+      "hashtags": ["#Technology", "#AI", "#Future"],
+      "reading_time": 5
+    },
+    {
+      "id": 2,
+      "cover_image": "https://i.ibb.co.com/g3R3KW4/kaitlyn-baker-v-ZJd-Yl5-JVXY-unsplash.jpg",
+      "author": "John Smith",
+      "author_image": "https://i.ibb.co.com/LN1BY93/alireza-npa-ah-TILoih-Z44-unsplash.jpg",
+      "post_date": "November 15, 2023",
+      "title": "Exploring Space on a Budget",
+      "hashtags": ["#Space", "#Exploration", "#BudgetTravel"],
+      "reading_time": 7
+    },
+    {
+      "id": 3,
+      "cover_image": "https://i.ibb.co.com/3yxFq0y/mathew-schwartz-i-Gheu30x-Ai8-unsplash.jpg",
+      "author": "Alice Johnson",
+      "author_image": "https://i.ibb.co.com/y5YgSxf/ahmed-c6oqma0-I0-G0-unsplash.jpg",
+      "post_date": "December 1, 2023",
+      "title": "Sustainable Fashion: Trends and Tips",
+      "hashtags": ["#Fashion", "#Sustainability", "#Trends"],
+      "reading_time": 6
+    },
+    {
+      "id": 4,
+      "cover_image": "https://i.ibb.co.com/4gBpsPJ/luca-bravo-9l-326-FISzk-unsplash.jpg",
+      "author": "Michael Lee",
+      "author_image": "https://i.ibb.co.com/9NQwVZd/ahmed-zu3-LLk6k-WHo-unsplash.jpg",
+      "post_date": "January 10, 2024",
+      "title": "The Art of Minimalist Living",
+      "hashtags": ["#Minimalism", "#Lifestyle", "#Art"],
+      "reading_time": 4
+    },
+    {
+      "id": 5,
+      "cover_image": "https://i.ibb.co.com/s5VGNDh/ales-nesetril-Im7l-Zjxe-Lhg-unsplash.jpg",
+      "author": "Emily Davis",
+      "author_image": "https://i.ibb.co.com/S5hXdwf/ahmed-M2-Xmc8r-Cd-YY-unsplash.jpg",
+      "post_date": "February 25, 2024",
+      "title": "A Beginner’s Guide to Vegan Cooking",
+      "hashtags": ["#Vegan", "#Cooking", "#Guide"],
+      "reading_time":8
+    }
+]  
