@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'; // ES6
 import { MdOutlineBookmarkBorder } from "react-icons/md";
-const Blog = ({blog,handleOnSave}) => {
-    const {title,cover_image,author,author_image,post_date,reading_time,hashtags} = blog
+const Blog = ({blog,handleOnSave,handleMArkAsRaed,activeBtns}) => {
+    const {title,cover_image,author,author_image,post_date,reading_time,hashtags,id} = blog
+
     return (
         <div className=" border border-slate-500 rounded-lg p-8 col-span-2 ">
              <div className="w-full mx-auto "><img src={cover_image} alt="Post_image" className="w-full m-auto object-cover h-[320px] rounded-lg" /></div>
@@ -16,7 +17,7 @@ const Blog = ({blog,handleOnSave}) => {
                
                 <div className="space-x-3 text-[#11111199] font-medium text-base text-center">
                     <span>{reading_time} min read</span>
-                    <button onClick={()=> handleOnSave(blog)}><MdOutlineBookmarkBorder /></button>
+                    <button onClick={()=> handleOnSave(blog)}><span style={{color: activeBtns[blog.id]? 'red' : ''}} > <MdOutlineBookmarkBorder /></span></button>
                 </div>
              </div>
              <div className="space-y-4">
@@ -26,7 +27,7 @@ const Blog = ({blog,handleOnSave}) => {
                         hashtags.map((hash, idx) => <a key={idx} href='#'><span>{hash}</span></a>)
                     }
                  </p>
-                 <button>Mark As read</button>
+                 <button onClick={()=>handleMArkAsRaed(reading_time,id)}>Mark As read</button>
              </div>
         </div>
     );
@@ -34,7 +35,9 @@ const Blog = ({blog,handleOnSave}) => {
 
 Blog.propTypes ={
     blog: PropTypes.object.isRequired,
-    handleOnSave : PropTypes.func.isRequired
+    handleOnSave : PropTypes.func.isRequired,
+    handleMArkAsRaed:PropTypes.func.isRequired,
+    activeBtns : PropTypes.number.isRequired
 }
 
 

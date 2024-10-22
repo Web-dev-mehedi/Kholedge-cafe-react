@@ -6,11 +6,49 @@ import Header from "./components/header/header"
 
 
 function App() {
-    const [bookmarks,setBookmarks]=useState([])
+    const [bookmarks,setBookmarks]=useState([]);
+    const [readingTime, setReadingTime] =useState(0);
+   //  
+   
+      const [activeBtns, setactiveBtns] = useState({})
+     
+
    const  handleOnSave = (item) =>{
+      setactiveBtns((prev) => ({
+         ...prev,
+         [item.id]: !prev[item.id]
+       }));
+      
+     //  
       const newBookmarks = [...bookmarks, item]
-      setBookmarks(newBookmarks)
+     
+       if(checkDuplicates(newBookmarks)){
+         return;
+       }else{
+         setBookmarks(newBookmarks);
+       }
    }
+
+//for duplicate checking
+
+function checkDuplicates(arr) {
+   let duplicates = arr.filter((item, index) => arr.indexOf(item) !== index);
+   return duplicates.length > 0;
+}
+
+   // 
+
+     const handleMArkAsRaed = (reading_time,id)=>{
+     
+            setReadingTime( readingTime+reading_time);
+      
+            
+          
+         const remainingBookmarks =   bookmarks.filter(item => item.id !== id);
+         setBookmarks(remainingBookmarks)
+         
+     }
+
 
 
   return (
@@ -20,8 +58,8 @@ function App() {
        </div>
 
        <div className="w-11/12 container mx-auto grid grid-cols-1 sm:grid-cols-3 place-content-between  gap-6">
-            <Blogs handleOnSave={handleOnSave}></Blogs>
-            <Bookmarks bookmarks={bookmarks}></Bookmarks>
+            <Blogs activeBtns={activeBtns}  handleMArkAsRaed={handleMArkAsRaed} handleOnSave={handleOnSave}></Blogs>
+            <Bookmarks readingTime={readingTime} bookmarks={bookmarks}></Bookmarks>
 
        </div>
     </>
